@@ -1,0 +1,168 @@
+body {
+    min-height: 100vh;
+    margin: 1;
+    display: grid;
+}
+
+main {
+    min-height: 580px;
+}
+
+footer {
+    min-height: 70px;
+}
+
+select {
+    box-sizing: border-box;
+    min-height: 40px;
+    min-width: 170px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #EAE8EC;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+
+option {
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 18px 0 rgba(37, 11, 56, 0.25);
+}
+
+input {
+    margin-left: 10px;
+    color: #52526A;
+    font-family: "HK Grotesk";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+.inputtext {
+    border: 1px solid #EAE8EC;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    min-height: 32px;
+    min-width: 238px;
+    max-width: auto;
+    text-align: left;
+}
+
+.inputvalue {
+    float: right;
+    margin-right: 10px;
+    border: 1px solid #EAE8EC;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    min-height: 32px;
+    max-width: 91px;
+    text-align: right;
+}
+
+.line {
+    box-sizing: border-box;
+    height: 1px;
+    border: 1px solid #E8DFED;
+}
+
+.line-copy {
+    box-sizing: border-box;
+    height: 1px;
+    margin: 10px;
+    border: 1px solid #E8DFED;
+}
+
+.total {
+    height: 38px;
+    width: 142px;
+    color: #250B38;
+    font-family: "HK Grotesk";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+
+.€-0-00 {
+    height: 38px;
+    width: 146px;
+    color: #250B38;
+    font-family: "HK Grotesk";
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+
+#total-copy {
+    margin-left: 10px;
+    height: 38px;
+    width: 142px;
+    color: #250B38;
+    font-family: "HK Grotesk";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+.€-0-00-copy {
+    float: right;
+    margin-right: 10px;
+    height: 38px;
+    width: 146px;
+    color: #250B38;
+    font-family: "HK Grotesk";
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 23px;
+    text-align: right;
+}
+
+.button-label {
+    height: 38px;
+    width: 125px;
+    color: #FFFFFF;
+    font-family: "HK Grotesk";
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 35px;
+    text-align: center;
+}
+
+.buttonbackground {
+    float: right;
+    margin-right: 10px;
+    min-height: 38px;
+    min-width: 125px;
+    border-radius: 19px;
+    background-color: #F0A023;
+}
+
+.otherbuttonbackground {
+    position: absolute;
+    right: 11px;
+    top: 9px;
+    min-height: 38px;
+    min-width: 125px;
+    border: 2px solid #F0A023;
+    border-radius: 19px;
+}
+
+.rectangle {
+    position: relative;
+    height: 61px;
+    border-radius: 4px;
+    background-color: #250B38;
+}
+
+.expenses {
+    border-radius: 4px;
+    padding-bottom: 10px;
+    background-color: #F4EEF7;
+}

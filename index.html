@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ExpenseTracker</title>
+</head>
+
+<body>
+    <main>
+
+    </main>
+
+    <footer>
+        <p class="line"></p>
+        <span class="total">Total <span class="€-0-00" id="total">€0</span><a class="buttonbackground" onclick="addReceipt()"><div class="button-label" for="">Add receipt</div></a></span>
+    </footer>
+
+    <script>
+        var total = [];
+        var receipt = 0;
+        var expense = 0;
+        var myParent = document.querySelector("main");
+
+        function addReceipt() {
+            var selectList = document.createElement("div");
+            selectList.innerHTML = `
+            <div>
+                <div class="rectangle">
+                    <select>
+                        <option value="Food">Food</option>
+                        <option value="Houseware">Houseware</option>
+                        <option value="Entertainment">Entertainment</option>
+                    </select>
+                    <a class="otherbuttonbackground" onclick="addExpense(` + receipt + `);"><div class="button-label">Add expense</div></a>
+                </div>
+                <div class="expenses">
+                    <div id="expenses` + receipt + `">
+                    <div id="receipt` + receipt + `"></div>
+                </div>
+                </div>
+            </div>
+            `;
+            myParent.appendChild(selectList);
+            let localtotal = document.createElement("div");
+            localtotal.innerHTML = `<p class="line-copy"></p><span id="total-copy">Total</span> <span class="€-0-00-copy" id="localtotal` + receipt + `">€0</span>`;
+            document.querySelector("#expenses" + receipt).appendChild(localtotal);
+            receipt++;
+        }
+
+        function addExpense(receipt) {
+            var div = document.createElement("div");
+            div.innerHTML = `
+            <p class="line-copy"></p>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Expense name" class="inputtext">
+                </td>
+                <td>
+                    <input type="text" placeholder="€0.00" class="expense` + receipt + ` inputvalue" id="expense` + expense + `" onchange="addTotal(` + expense + `, ` + receipt + `)">
+                </td>
+            </tr>
+            `;
+            document.querySelector("#receipt" + receipt).appendChild(div);
+            expense++;
+            total.push(0);
+        }
+
+        function addTotal(expense, receipt) {
+            var totalreceipt = [];
+            var number = 0;
+            let item = document.getElementById("expense" + expense).value;
+            if (item == '') {
+                item = 0;
+            } else {
+                number = Number(item.replace(/[^0-9\.-]+/g, ""));
+            }
+            total.splice(expense, 1, number);
+            document.querySelector("#total").innerHTML = "€"+total.reduce((partialSum, a) => partialSum + a, 0).toFixed(2);
+            let items = document.querySelectorAll(".expense" + receipt);
+            let array = new Array();
+            array = Array.from(items);
+            array.forEach(function (number, index) {
+                var receiptnumber = array[index].value;
+                receiptnumber = Number(receiptnumber.replace(/[^0-9\.-]+/g, ""));
+                totalreceipt.splice(index, 1, receiptnumber);
+                document.querySelector("#localtotal" + receipt).innerHTML = "€"+totalreceipt.reduce((partialSum, a) => partialSum + a, 0).toFixed(2);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
